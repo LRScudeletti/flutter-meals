@@ -25,7 +25,7 @@ const dummyCategories = [
   Category(
     id: 'c5',
     title: 'Leve & Saudável',
-    color: Colors.amber,
+    color: Colors.blueGrey,
   ),
   Category(
     id: 'c6',
