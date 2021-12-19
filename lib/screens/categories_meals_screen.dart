@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_meals/models/category.dart';
 
-class CategoriesMealsScreen extends StatefulWidget {
-  const CategoriesMealsScreen({Key? key}) : super(key: key);
+class CategoriesMealsScreen extends StatelessWidget {
+  final Category category;
 
-  @override
-  _CategoriesMealsScreenState createState() => _CategoriesMealsScreenState();
-}
+  const CategoriesMealsScreen(this.category, {Key? key}) : super(key: key);
 
-class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Receitas'),
+        title: Text(category.title),
       ),
-      body: const Center(
-        child: Text('Receitas por Categoria'),
+      body: Center(
+        child: Text('Receitas por Categoria ${category.id}'),
       ),
     );
   }
