@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
-            .copyWith(secondary: Colors.amber),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red)
+            .copyWith(secondary: Colors.blue),
         fontFamily: 'Raleway',
-        canvasColor: const Color.fromRGBO(204, 255, 255, 1),
+        canvasColor: Colors.grey[200],
         textTheme: ThemeData.light().textTheme.copyWith(
                 subtitle2: const TextStyle(
               fontSize: 20,
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
             )),
       ),
       routes: {
-        AppRoutes.home: (ctx) => CategoriesScreen(),
-        AppRoutes.categoriesMeals: (ctx) => CategoriesMealsScreen(),
+        AppRoutes.home: (ctx) => const CategoriesScreen(),
+        AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
       },
     );
   }
