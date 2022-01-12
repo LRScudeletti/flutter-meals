@@ -47,12 +47,16 @@ class MainDrawer extends StatelessWidget {
           _createIcon(
             Icons.restaurant,
             'Refeições',
-            () => Navigator.of(context).pushNamed(AppRoutes.home),
+            () => WidgetsBinding.instance?.addPostFrameCallback((_) {
+              Navigator.of(context).pushNamed(AppRoutes.home);
+            }),
           ),
           _createIcon(
             Icons.settings,
             'Configurações',
-            () => Navigator.of(context).pushNamed(AppRoutes.settings),
+            () => WidgetsBinding.instance?.addPostFrameCallback((_) {
+              Navigator.of(context).pushNamed(AppRoutes.settings);
+            }),
           )
         ],
       ),
