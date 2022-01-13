@@ -44,20 +44,13 @@ class MainDrawer extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
+          _createIcon(Icons.restaurant, 'Refeições',
+              () => Navigator.of(context).pushReplacementNamed(AppRoutes.home)),
           _createIcon(
-            Icons.restaurant,
-            'Refeições',
-            () => WidgetsBinding.instance?.addPostFrameCallback((_) {
-              Navigator.of(context).pushNamed(AppRoutes.home);
-            }),
-          ),
-          _createIcon(
-            Icons.settings,
-            'Configurações',
-            () => WidgetsBinding.instance?.addPostFrameCallback((_) {
-              Navigator.of(context).pushNamed(AppRoutes.settings);
-            }),
-          )
+              Icons.settings,
+              'Configurações',
+              () => Navigator.of(context)
+                  .pushReplacementNamed(AppRoutes.settings)),
         ],
       ),
     );
