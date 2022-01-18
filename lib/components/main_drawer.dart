@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_meals/Utils/app_routes.dart';
+
+import '../utils/app_routes.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key? key}) : super(key: key);
-
-  Widget _createIcon(IconData icon, String label, Function onTap) {
+  Widget _createItem(IconData icon, String label, Function() onTap) {
     return ListTile(
       leading: Icon(
         icon,
@@ -12,13 +11,13 @@ class MainDrawer extends StatelessWidget {
       ),
       title: Text(
         label,
-        style: const TextStyle(
+        style: TextStyle(
           fontFamily: 'RobotoCondensed',
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: onTap(),
+      onTap: onTap,
     );
   }
 
@@ -28,29 +27,31 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            alignment: Alignment.topCenter,
             height: 120,
             width: double.infinity,
-            padding: const EdgeInsets.all(30),
-            color: Theme.of(context).colorScheme.primary,
-            child: const Text(
-              'Vamos cozinhar?',
+            padding: EdgeInsets.all(20),
+            color: Theme.of(context).accentColor,
+            alignment: Alignment.bottomRight,
+            child: Text(
+              'Vamos Cozinhar?',
               style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 30,
-                  color: Colors.white),
+                fontWeight: FontWeight.w900,
+                fontSize: 30,
+                color: Theme.of(context).primaryColor,
+              ),
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(height: 20),
+          _createItem(
+            Icons.restaurant,
+            'Refeições',
+            () => Navigator.of(context).pushReplacementNamed(AppRoutes.HOME),
           ),
-          _createIcon(Icons.restaurant, 'Refeições',
-              () => Navigator.of(context).pushReplacementNamed(AppRoutes.home)),
-          _createIcon(
-              Icons.settings,
-              'Configurações',
-              () => Navigator.of(context)
-                  .pushReplacementNamed(AppRoutes.settings)),
+          _createItem(
+            Icons.settings,
+            'Configurações',
+            () => Navigator.of(context).pushReplacementNamed(AppRoutes.SETINGS),
+          ),
         ],
       ),
     );

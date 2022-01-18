@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_meals/models/category.dart';
-import 'package:projeto_meals/models/meal.dart';
 
-const dummyCategories = [
+import '../models/category.dart';
+import '../models/meal.dart';
+
+const DUMMY_CATEGORIES = const [
   Category(
     id: 'c1',
     title: 'Italiano',
@@ -55,14 +56,13 @@ const dummyCategories = [
   ),
 ];
 
-// ignore: unnecessary_const
-const dummyMeals = const [
+const DUMMY_MEALS = const [
   Meal(
     id: 'm1',
     categories: ['c1', 'c2'],
     title: 'Spaghetti with Tomato Sauce',
-    cost: Cost.cheap,
-    complexity: Complexity.simple,
+    cost: Cost.Cheap,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
     duration: 20,
@@ -92,8 +92,8 @@ const dummyMeals = const [
     id: 'm2',
     categories: ['c2'],
     title: 'Toast Hawaii',
-    cost: Cost.cheap,
-    complexity: Complexity.simple,
+    cost: Cost.Cheap,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
     duration: 10,
@@ -118,8 +118,8 @@ const dummyMeals = const [
     id: 'm3',
     categories: ['c2', 'c3'],
     title: 'Classic Hamburger',
-    cost: Cost.fair,
-    complexity: Complexity.simple,
+    cost: Cost.Fair,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
     duration: 45,
@@ -147,8 +147,8 @@ const dummyMeals = const [
     id: 'm4',
     categories: ['c4'],
     title: 'Wiener Schnitzel',
-    cost: Cost.expensive,
-    complexity: Complexity.medium,
+    cost: Cost.Expensive,
+    complexity: Complexity.Medium,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
     duration: 60,
@@ -180,8 +180,8 @@ const dummyMeals = const [
     id: 'm5',
     categories: ['c2', 'c5', 'c10'],
     title: 'Salad with Smoked Salmon',
-    cost: Cost.expensive,
-    complexity: Complexity.simple,
+    cost: Cost.Expensive,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
     duration: 15,
@@ -212,8 +212,8 @@ const dummyMeals = const [
     id: 'm6',
     categories: ['c6', 'c10'],
     title: 'Delicious Orange Mousse',
-    cost: Cost.cheap,
-    complexity: Complexity.difficult,
+    cost: Cost.Cheap,
+    complexity: Complexity.Difficult,
     imageUrl:
         'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
     duration: 240,
@@ -245,8 +245,8 @@ const dummyMeals = const [
     id: 'm7',
     categories: ['c7'],
     title: 'Pancakes',
-    cost: Cost.cheap,
-    complexity: Complexity.simple,
+    cost: Cost.Cheap,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
     duration: 20,
@@ -274,8 +274,8 @@ const dummyMeals = const [
     id: 'm8',
     categories: ['c8'],
     title: 'Creamy Indian Chicken Curry',
-    cost: Cost.fair,
-    complexity: Complexity.medium,
+    cost: Cost.Fair,
+    complexity: Complexity.Medium,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
     duration: 35,
@@ -305,8 +305,8 @@ const dummyMeals = const [
     id: 'm9',
     categories: ['c9'],
     title: 'Chocolate Souffle',
-    cost: Cost.cheap,
-    complexity: Complexity.difficult,
+    cost: Cost.Cheap,
+    complexity: Complexity.Difficult,
     imageUrl:
         'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
     duration: 45,
@@ -352,8 +352,8 @@ const dummyMeals = const [
     id: 'm10',
     categories: ['c2', 'c5', 'c10'],
     title: 'Asparagus Salad with Cherry Tomatoes',
-    cost: Cost.expensive,
-    complexity: Complexity.simple,
+    cost: Cost.Expensive,
+    complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
     duration: 30,

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_meals/Utils/app_routes.dart';
-import 'package:projeto_meals/models/meal.dart';
+
+import '../models/meal.dart';
+import '../utils/app_routes.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
 
-  const MealItem(this.meal, {Key? key}) : super(key: key);
+  const MealItem(this.meal);
 
   void _selectMeal(BuildContext context) {
     Navigator.of(context)
         .pushNamed(
-      AppRoutes.mealDetail,
+      AppRoutes.MEAL_DETAIL,
       arguments: meal,
     )
         .then((result) {
       if (result == null) {
-        print('Sem resultado');
+        print('Sem resultado!');
       } else {
         print('O nome da refeição é $result.');
       }
@@ -27,17 +28,17 @@ class MealItem extends StatelessWidget {
     return InkWell(
       onTap: () => _selectMeal(context),
       child: Card(
-        margin: const EdgeInsets.all(10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 4,
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: [
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -49,18 +50,18 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: 10,
                   bottom: 20,
+                  right: 10,
                   child: Container(
                     width: 300,
                     color: Colors.black54,
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       vertical: 5,
                       horizontal: 20,
                     ),
                     child: Text(
                       meal.title,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 26,
                         color: Colors.white,
                       ),
@@ -72,38 +73,33 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(Icons.schedule),
-                        const SizedBox(
-                          width: 6,
-                        ),
-                        Text('${meal.duration} min'),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.work),
-                        const SizedBox(
-                          width: 6,
-                        ),
-                        Text(meal.complexityText),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.attach_money),
-                        const SizedBox(
-                          width: 6,
-                        ),
-                        Text(meal.costText),
-                      ],
-                    ),
-                  ]),
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.schedule),
+                      SizedBox(width: 6),
+                      Text('${meal.duration} min'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.work),
+                      SizedBox(width: 6),
+                      Text(meal.complexityText),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.attach_money),
+                      SizedBox(width: 6),
+                      Text(meal.costText),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

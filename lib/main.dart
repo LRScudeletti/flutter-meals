@@ -1,52 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_meals/Utils/app_routes.dart';
-import 'package:projeto_meals/screens/categories_meals_screen.dart';
-import 'package:projeto_meals/screens/categories_screen.dart';
-import 'package:projeto_meals/screens/meal_detail_screen.dart';
-import 'package:projeto_meals/screens/settings_screen.dart';
-import 'package:projeto_meals/screens/tabs_screen.dart';
 
-void main() => runApp(const MyApp());
+import 'screens/tabs_screen.dart';
+import 'screens/categories_meals_screen.dart';
+import 'screens/meal_detail_screen.dart';
+import 'screens/settings_screen.dart';
+
+import 'utils/app_routes.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeliMeals',
+      title: 'Vamos Cozinhar?',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red)
-            .copyWith(secondary: Colors.yellow),
+        primarySwatch: Colors.pink,
+        accentColor: Colors.amber,
         fontFamily: 'Raleway',
-        canvasColor: Colors.grey[200],
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
-                subtitle2: const TextStyle(
-              fontSize: 20,
-              fontFamily: 'RobotoCondensed',
-            )),
+              headline6: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+              ),
+            ),
       ),
       routes: {
-        AppRoutes.home: (ctx) => const TabsScreen(),
-        AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
-        AppRoutes.mealDetail: (ctx) => const MealDetailScreen(),
-        AppRoutes.settings: (ctx) => const SettingsScreen(),
-      },
-      // onGenerateRoute: (settings) {
-      //   if (settings.name == '/alguma-coisa') {
-      //     return null;
-      //   } else if (settings.name == '/outra-coisa') {
-      //     return null;
-      //   } else {
-      //     return MaterialPageRoute(builder: (_) {
-      //       return const CategoriesScreen();
-      //     });
-      //   }
-      // },
-      onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (_) {
-          return const CategoriesScreen();
-        });
+        AppRoutes.HOME: (ctx) => TabsScreen(),
+        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
+        AppRoutes.SETINGS: (ctx) => SettingsScreen(),
       },
     );
   }
