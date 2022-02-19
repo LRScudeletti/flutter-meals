@@ -6,7 +6,7 @@ import '../utils/app_routes.dart';
 class MealItem extends StatelessWidget {
   final Meal meal;
 
-  const MealItem(this.meal);
+  const MealItem(this.meal, {Key? key}) : super(key: key);
 
   void _selectMeal(BuildContext context) {
     Navigator.of(context)
@@ -38,7 +38,7 @@ class MealItem extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -55,13 +55,13 @@ class MealItem extends StatelessWidget {
                   child: Container(
                     width: 300,
                     color: Colors.black54,
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 5,
                       horizontal: 20,
                     ),
                     child: Text(
                       meal.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 26,
                         color: Colors.white,
                       ),
@@ -73,28 +73,28 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.schedule),
-                      SizedBox(width: 6),
+                      const Icon(Icons.schedule),
+                      const SizedBox(width: 6),
                       Text('${meal.duration} min'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.work),
-                      SizedBox(width: 6),
+                      const Icon(Icons.work),
+                      const SizedBox(width: 6),
                       Text(meal.complexityText),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.attach_money),
-                      SizedBox(width: 6),
+                      const Icon(Icons.attach_money),
+                      const SizedBox(width: 6),
                       Text(meal.costText),
                     ],
                   ),
