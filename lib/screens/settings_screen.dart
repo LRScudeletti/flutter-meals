@@ -3,6 +3,8 @@ import 'package:meals/models/settings.dart';
 import '../components/main_drawer.dart';
 
 class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
+
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
@@ -28,13 +30,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Configurações'),
+        title: const Text('Configurações'),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
               'Configurações',
               style: Theme.of(context).textTheme.subtitle1,

@@ -5,6 +5,8 @@ import '../models/category.dart';
 import '../data/dummy_data.dart';
 
 class CategoriesMealsScreen extends StatelessWidget {
+  const CategoriesMealsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context)!.settings.arguments as Category;
