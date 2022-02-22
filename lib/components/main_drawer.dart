@@ -47,12 +47,12 @@ class MainDrawer extends StatelessWidget {
           _createItem(
             Icons.restaurant,
             'Refeições',
-            () => Navigator.of(context).pushReplacementNamed(AppRoutes.HOME),
+            () => Navigator.of(context).pushReplacementNamed(AppRoutes.home),
           ),
           _createItem(
             Icons.settings,
             'Configurações',
-            () => Navigator.of(context).pushReplacementNamed(AppRoutes.SETINGS),
+            () => Navigator.of(context).pushReplacementNamed(AppRoutes.settings),
           ),
         ],
       ),
