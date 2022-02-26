@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
             .copyWith(secondary: Colors.amber),
       ),
       routes: {
-        AppRoutes.home: (ctx) => TabsScreen(),
-        AppRoutes.categoriesMeals: (ctx) => CategoriesMealsScreen(),
-        AppRoutes.mealDetail: (ctx) => MealDetailScreen(),
-        AppRoutes.settings: (ctx) => SettingsScreen(),
+        AppRoutes.home: (ctx) => const TabsScreen(),
+        AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
+        AppRoutes.mealDetail: (ctx) => const MealDetailScreen(),
+        AppRoutes.settings: (ctx) => const SettingsScreen(),
       },
     );
   }
